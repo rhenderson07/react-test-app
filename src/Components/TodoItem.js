@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 class TodoItem extends Component {
   render() {
-    let {id, title, completed} = this.props.todo;
+    let {title, completed} = this.props.todo;
     let completeMessage = completed
-      ? 'X'
-      : ' ';
+      ? 'x'
+      : '_';
 
     return (
       <li className="todoItem">
-        <strong>{title}</strong>: [{completeMessage}]
+        [{completeMessage}] {title}
       </li>
     );
   }
