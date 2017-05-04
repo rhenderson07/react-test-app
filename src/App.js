@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import uuid from 'uuid';
+import axios from 'axios';
+
 import Projects from './Components/Projects';
 import AddProject from './Components/AddProject';
 
@@ -10,11 +12,34 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      projects: []
+      projects: [],
+      todos: []
     }
   }
 
   componentWillMount() {
+    this.getProjects();
+    this.getTodos();
+  }
+
+  componentDidMount() {
+    this.getTodos();
+  }
+
+  getTodos() {
+    //call JsonPlaceholder api to demonstrate getting data from a server
+    let self = this;
+    let url = 'https://jsonplaceholder.typicode.com/todos'
+
+    axios.get(url).then(function(response) {
+      self.setState({todos: response.data});
+      console.log(self.state);
+    }).catch(function(error) {
+      console.log(error);
+    });
+  }
+
+  getProjects() {
     this.setState({
       projects: [
         {
