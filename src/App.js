@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import Projects from './Components/Projects';
 import AddProject from './Components/AddProject';
+import Todos from './Components/Todos';
 
 import logo from './logo.svg';
 import './App.css';
@@ -60,7 +61,7 @@ class App extends Component {
   }
 
   render() {
-    let {projects} = this.state;
+    let {projects, todos} = this.state;
 
     return (
       <div className="App">
@@ -72,6 +73,7 @@ class App extends Component {
         <div className="App-intro">
           <AddProject addProject={this.handleAddProject.bind(this)}/>
           <Projects projects={projects} onDelete={this.handleDeleteProject.bind(this)}/>
+          <Todos todos={todos}/>
         </div>
       </div>
     );
