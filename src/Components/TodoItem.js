@@ -5,12 +5,13 @@ class TodoItem extends Component {
   render() {
     let {title, completed} = this.props.todo;
     let completeMessage = completed
-      ? 'x'
-      : '_';
+      ? '[x]'
+      : '[_]';
 
     return (
       <li className="todoItem">
-        [{completeMessage}] {title}
+        {completeMessage}
+        {title}
       </li>
     );
   }

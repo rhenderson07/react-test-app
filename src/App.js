@@ -73,6 +73,7 @@ class App extends Component {
         <div className="App-intro">
           <AddProject addProject={this.handleAddProject.bind(this)}/>
           <Projects projects={projects} onDelete={this.handleDeleteProject.bind(this)}/>
+          <hr/>
           <Todos todos={todos}/>
         </div>
       </div>
