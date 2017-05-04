@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import uuid from 'uuid';
 // import ProjectItem from './ProjectItem';
 
@@ -16,7 +17,9 @@ class AddProject extends Component {
   }
 
   render() {
-    let categoryOptions = this.props.categories.map(category => {
+    let categories = this.props.categories;
+
+    let categoryOptions = categories.map(category => {
       return (
         <option key={category} value={category}>{category}</option>
       );
@@ -47,25 +50,31 @@ class AddProject extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
+
     let {title, category} = this.refs;
 
     if (title.value === '') {
       alert('Title is required');
     } else {
       this.setState({
+        // update state
         newProject: {
           id: uuid.v4(),
           title: title.value,
           category: category.value
         }
       }, function() {
-        // console.log(this.state);
+        //callback function
         this.props.addProject(this.state.newProject);
       })
     }
-
-    event.preventDefault();
   }
+}
+
+AddProject.propTypes = {
+  categories: PropTypes.array,
+  addProject: PropTypes.func
 }
 
 export default AddProject;
