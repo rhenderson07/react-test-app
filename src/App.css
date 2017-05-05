@@ -24,6 +24,17 @@
   margin-left: 10px;
 }
 
+button.link {
+  background:none!important;
+  color:blue;
+  border:none;
+  padding:0!important;
+  margin-left: 10px;
+  font: inherit;
+  /*border is optional*/
+  cursor: pointer;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

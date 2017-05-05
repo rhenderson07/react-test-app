@@ -8,13 +8,13 @@ class ProjectItem extends Component {
     return (
       <li className="projectItem">
         <strong>{title}</strong>: {category}
-        <a href="#" onClick={this.deleteProject.bind(this, id)}>X</a>
+        {/* <a href="#" onClick={this.deleteProject.bind(this, id)}>X</a> */}
+        <button onClick={this.deleteProject.bind(this, id)} className="link">X</button>
       </li>
     );
   }
 
   deleteProject(id) {
-    // console.log("Deleting project " + id);
     this.props.onDelete(id);
   }
 }
