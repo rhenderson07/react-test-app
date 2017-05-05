@@ -19,11 +19,6 @@
   text-align: left;
 }
 
-.projectItem a {
-  text-decoration: none;
-  margin-left: 10px;
-}
-
 button.link {
   background:none!important;
   color:blue;
