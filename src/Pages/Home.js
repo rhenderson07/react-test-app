@@ -3,9 +3,8 @@ import uuid from 'uuid';
 import axios from 'axios';
 
 import Projects from '../components/Projects';
+import AddProject from '../components/AddProject';
 import Todos from '../components/Todos';
-
-import AddProject from '../actions/AddProject';
 
 class Home extends Component {
   constructor() {

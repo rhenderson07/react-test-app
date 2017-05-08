@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid';
+// import ProjectItem from './ProjectItem';
 
 class AddProject extends Component {
 
