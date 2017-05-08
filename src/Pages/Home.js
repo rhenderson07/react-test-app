@@ -29,10 +29,10 @@ class Home extends Component {
     let self = this;
     let url = 'https://jsonplaceholder.typicode.com/todos'
 
-    axios.get(url).then(function(response) {
+    axios.get(url).then((response) => {
       self.setState({todos: response.data});
       // console.log(self.state);
-    }).catch(function(error) {
+    }).catch((error) => {
       console.log(error);
     });
   }

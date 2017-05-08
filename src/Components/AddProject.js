@@ -64,7 +64,7 @@ class AddProject extends Component {
           title: title.value,
           category: category.value
         }
-      }, function() {
+      }, () => {
         //callback function
         this.props.addProject(this.state.newProject);
       })
