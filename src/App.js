@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Home from './Pages/Home';
-import Layout from './Pages/Layout';
+import Home from './pages/Home';
+import Layout from './pages/Layout';
 
 import './App.css';
 
